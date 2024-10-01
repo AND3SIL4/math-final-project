@@ -18,11 +18,6 @@ source virt/bin/activate
 
 ![intallation](image-1.png)
 
-```bash 
-
-```
-
-
 ## Example
 
 ![execution_example](image.png)
