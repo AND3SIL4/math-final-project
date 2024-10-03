@@ -21,9 +21,11 @@ import matplotlib.pyplot as plt
 import random
 import os
 
-
-def show_function(function, x_min, x_max, points=1000):
-    """This method get a function and use matplotlib to show visually"""
+def show_function(function, x_min, x_max, points=1000)-> None:
+    """
+    This method get a function and use matplotlib to show visually
+    
+    """
     x = np.linspace(x_min, x_max, points)
 
     # Calculate values
@@ -53,67 +55,41 @@ def show_function(function, x_min, x_max, points=1000):
     plt.show()
 
 
-"""This code contains all the differents function types"""
+"""
+This code contains all the differents function types
+"""
 
 # Funciones cuadraticas
-
-
 def cuadratica_1(x):
     return x**2
-
-
 def cuadratica_2(x):
     return -x**2 + 2*x + 5
-
 # Funciones lineales
-
-
 def lineal_1(x):
     return 3*x
-
-
 def lineal_2(x):
     return x+2
-
 # Funciones logaritmicas
-
-
 def logaritmica_1(x):
     return np.log(x)
-
-
 def logaritmica_2(x):
     return np.log(3*x) + 2
-
 # Funciones cubicas
-
-
 def cubica_1(x):
     return x**3
-
-
 def cubica_2(x):
     return 5*x**3 + 2*x + 10
-
 # Racionales
-
-
 def racional_1(x):
     return 1/(2*x)
-
 # raíz
-
-
 def raiz(x):
     return np.sqrt(x)
 
-
-"""Method to get the correct answer"""
-
-
+"""
+Method to get the correct answer
+"""
 def menu(option: str) -> bool:
-    # global lifes
-    # global points
     options: list = [
         "cuadratica", "logaritmica", "cubica", "lineal", "raíz", "racional"
     ]
@@ -150,14 +126,12 @@ def menu(option: str) -> bool:
     else:
         return False
 
-
 def calculate_score(response: bool, lifes: int, points: int) -> None:
     if response:
         points += 10
     else:
         lifes -= 1
     return lifes, points
-
 
 def game():
     function: dict = {
@@ -219,4 +193,5 @@ def game():
   
     print("El juego ha terminado :)")
     print(f"Tu puntaje final es: {points} has {"aprobado" if points >= 30 else "perdido"}")
-game()
+
+game()##Run the main function
